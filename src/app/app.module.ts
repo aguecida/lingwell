@@ -8,12 +8,14 @@ import { MaterialModule } from './material.module';
 import { FeedbackComponent } from './components/feedback/feedback.component';
 import { RouteModule } from './route.module';
 import { SplashPageComponent } from './components/splash-page/splash-page.component';
+import { PrimerComponent } from './components/primer/primer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     FeedbackComponent,
-    SplashPageComponent
+    SplashPageComponent,
+    PrimerComponent
   ],
   imports: [
     BrowserModule,
