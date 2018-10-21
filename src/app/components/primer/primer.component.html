@@ -1,3 +1,111 @@
-<p>
-  primer works!
-</p>
+<div *ngIf="currentStep === 1" class="fadeIn language-container">
+  <mat-form-field class="language-input" appearance="fill">
+    <mat-label>Select a Language</mat-label>
+    <mat-select [formControl]="selectedLanguage" disableRipple>
+      <mat-select-trigger *ngIf="selectedLanguage.value">
+        <img class="flag" src="../assets/{{selectedLanguage.value.Icon}}.png">
+        <span>{{selectedLanguage.value.Name}}</span> 
+      </mat-select-trigger>
+      <mat-option *ngFor="let language of languages" [value]="language" [disabled]="!language.Available">
+        <img class="flag" src="../assets/{{language.Icon}}.png">
+        <span>{{language.Name}}</span>
+        <span *ngIf="!language.Available" class="language-unavailable">(coming soon)</span>
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+<div *ngIf="currentStep === 2" class="fadeIn descriptor-container">
+  <div class="filters">
+    <div class="filters-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput [(ngModel)]="query">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Categories</mat-label>
+          <mat-select [formControl]="categoryFilter" multiple disableRipple>
+              <mat-select-trigger>
+                <span>
+                  {{categoryFilter.value ? categoryFilter.value[0] : ''}}
+                </span>
+                <span *ngIf="categoryFilter.value?.length > 1" class="hidden-filters">
+                  (+{{categoryFilter.value.length - 1}} {{categoryFilter.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+            <mat-option *ngFor="let category of categories" [value]="category.Name">{{category.Name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="list-container custom-scroll" appScroll>
+      <div *ngFor="let category of categories | filter: query : categoryFilter.value" class="category">
+        <h1>{{category.Name}}</h1>
+        <mat-chip-list>
+          <mat-basic-chip [ngClass]="{ 'selected': isSelectedInterest(interest) }" (click)="interestSelected(interest)" *ngFor="let interest of category.Interests" disableRipple>
+             {{interest.Name}}
+          </mat-basic-chip>
+        </mat-chip-list>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="currentStep === 3" class="fadeIn descriptor-container">
+  <div class="filters">
+    <div class="filters-container">
+        <mat-form-field appearance="outline">
+          <mat-label>Search</mat-label>
+          <input matInput [(ngModel)]="occupationQuery">
+          <mat-icon matSuffix>search</mat-icon>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Categories</mat-label>
+          <mat-select [formControl]="occupationFilter" multiple disableRipple>
+              <mat-select-trigger>
+                <span>
+                  {{occupationFilter.value ? occupationFilter.value[0] : ''}}
+                </span>
+                <span *ngIf="occupationFilter.value?.length > 1" class="hidden-filters">
+                  (+{{occupationFilter.value.length - 1}} {{occupationFilter.value?.length === 2 ? 'other' : 'others'}})
+                </span>
+              </mat-select-trigger>
+            <mat-option *ngFor="let o of occupations" [value]="o.Name">{{o.Name}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+    </div>
+  </div>
+  <div class="list-container custom-scroll" appScroll>
+      <div *ngFor="let o of occupations | filter: occupationQuery : occupationFilter.value" class="category">
+        <h1>{{o.Name}}</h1>
+        <mat-chip-list>
+          <mat-basic-chip [ngClass]="{ 'selected': isSelectedOccupation(interest) }" (click)="occupationSelected(interest)" *ngFor="let interest of o.Interests" disableRipple>
+            {{interest.Name}}
+          </mat-basic-chip>
+        </mat-chip-list>
+      </div>
+  </div>
+</div>
+
+<div *ngIf="currentStep === 4" class="fadeIn summary-container">
+  <h1>All done! We'll use the information you provided to create lessons that are tailored to you.</h1>
+  <div *ngIf="selectedOccupations.length === 0" class="warning-box">
+    <mat-icon>warning</mat-icon>
+    <span>We noticed you didn't select an occupation. While it's not required, selecting at least one occupation that best describes what you do will help us improve your learning experience.</span>
+  </div>
+  <div class="begin-lessons">
+    <button>Begin Lessons</button>
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-content">
+    <span *ngIf="currentStep !== 4" class="step-text step-number">STEP {{currentStep}}</span>
+    <span class="step-text">{{getHintText()}}</span>
+    <span class="spacer"></span>
+    <button (click)="stepBack()" mat-button color="primary" [disabled]="stepBackDisabled()">BACK</button>
+    <button (click)="stepNext()" mat-button color="primary" [disabled]="stepNextDisabled()">NEXT</button>
+  </div>
+</div>
+
+<mat-icon *ngIf="currentStep === 2 || currentStep === 3" class="feedback fadeIn" (click)="openFeedbackDialog()" matTooltip="Feedback" matTooltipPosition="right">feedback</mat-icon>

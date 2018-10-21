@@ -1,0 +1,224 @@
+/*** Common Styles ***/
+
+.fadeIn {
+    animation: fadeIn .3s ease-in 0s;
+}
+
+/*** Footer ***/
+
+.footer {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+
+    .footer-content {
+        display: flex;
+        margin: 0 30px;
+    }
+
+    .step-text {
+        color: #555;
+        margin-top: 8px;
+    }
+
+    .step-number {
+        display: none;
+        margin-right: 10px;
+        font-weight: 500;
+    }
+}
+
+/*** Language Selector (step 1) ***/
+
+.language-container {
+    background-image: url("../assets/world1.jpg");
+    text-align: center;
+    height: calc(100vh - 57px);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.language-input {
+    width: 90%; 
+    margin-top: calc(100vh / 2 - 57px);
+}
+
+.language-unavailable {
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+.flag {
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+/*** Descriptor Selection Pages (step 2/3) ***/
+
+.descriptor-container {
+    margin-bottom: 57px;
+    min-height: 172px;
+}
+
+.filters {
+    flex: 0 0 250px;
+
+    .filters-container {
+        padding: 10px 60px 0 20px;
+    }
+
+    mat-form-field {
+        display: block;
+    }
+}
+
+.list-container {
+    border-top: 1px solid #ddd;
+    flex: auto;
+    height: calc(100vh - 77px - 162px);
+    overflow-x: hidden;
+    padding-top: 20px;
+    transition: box-shadow .1s;
+}
+
+.category {
+    margin: 0 20px 15px;
+}
+
+mat-basic-chip {
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 24px;
+    padding: 8px 15px;
+    outline: none !important;
+    cursor: pointer;
+    margin: 4px;
+    user-select: none;
+    transition: background-color .15s, color .15s;
+}
+
+.hidden-filters {
+    opacity: 0.75;
+    font-size: 11px;
+}
+
+.feedback {
+    cursor: pointer;
+    position: fixed;
+    top: 66px;
+    right: 18px;
+    bottom: unset;
+    left: unset;
+    color: #777;
+}
+
+/*** Final Page ***/
+
+.summary-container {
+    width: auto;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 57px);
+
+    h1 {
+        text-align: center;
+        color: #777;
+    }
+
+    .warning-box {
+        background: #fff3cd;
+        color: #856404;
+        padding: 10px 20px;
+        border-color: #ffeeba;
+        border-radius: 5px;
+        margin-bottom: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        mat-icon {
+            margin-right: 10px;
+        }
+    }
+
+    .begin-lessons {
+        text-align: center;
+
+        button {
+            color: #fff;
+            border: none;
+            font-size: 18px;
+            outline: none;
+            padding: 20px 30px;
+            border-radius: 30px;
+            cursor: pointer;
+            box-shadow: 0 10px 15px 0 rgba(0,0,0,0.1);
+        
+            &:active:hover {
+                box-shadow: inset 0 10px 15px 0 rgba(0, 0, 0, 0.1);
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@media only screen and (min-width: 426px) {
+    .language-input {
+        width: 400px;
+    }
+
+    .step-number {
+        display: inline !important;
+    }
+
+    .descriptor-container {
+        display: flex;
+    }
+
+    .filters {
+        .filters-container {
+            padding: 20px 0 0 25px;
+        }
+    
+        mat-form-field {
+            display: inline-block;
+            width: 200px;
+        }
+    }
+
+    .list-container {
+        border-top: none !important;
+        box-shadow: none !important;
+        height: calc(100vh - 77px);
+    }
+
+    .feedback {
+        bottom: 72px;
+        left: 25px;
+        top: unset;
+        right: unset;
+    }
+}
+
+@media only screen and (min-width: 769px) {
+    .summary-container {
+        width: 600px;
+    }
+}
