@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
+import { FeedbackComponent } from './components/feedback/feedback.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FeedbackComponent
   ],
   imports: [
     BrowserModule,

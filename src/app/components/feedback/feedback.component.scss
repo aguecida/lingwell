@@ -1,0 +1,37 @@
+@import '~@angular/material/theming';
+
+$config: mat-typography-config();
+
+mat-dialog-content {
+    padding: 0;
+}
+
+mat-dialog-actions {
+    justify-content: flex-end;
+
+    button {
+        margin-left: 5px;
+    }
+}
+
+textarea {
+    @include mat-typography-level-to-styles($config, input);
+    width: 252px;
+    height: 100px;
+    padding: 10px 24px;
+    margin: 0;
+    resize: none;
+    border-radius: 3px;
+    outline: none;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    border-left: none;
+    border-right: none;
+    border-radius: 0;
+    transition: border .2s;
+
+    &:focus, &:hover {
+        border-top: 1px solid #bbb;
+        border-bottom: 1px solid #bbb;
+    }
+}

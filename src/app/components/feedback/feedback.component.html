@@ -1,0 +1,10 @@
+<h2 mat-dialog-title>Feedback</h2>
+
+<mat-dialog-content>
+  <textarea class="custom-scroll small" [(ngModel)]="input" placeholder="Think something is missing on this page? Leave us a note here." cdkFocusInitial></textarea>
+</mat-dialog-content>
+
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>CANCEL</button>
+  <button mat-button mat-dialog-close [disabled]="!input">SUBMIT</button>
+</mat-dialog-actions>
