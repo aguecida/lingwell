@@ -10,6 +10,7 @@ import { RouteModule } from './route.module';
 import { SplashPageComponent } from './components/splash-page/splash-page.component';
 import { PrimerComponent } from './components/primer/primer.component';
 import { DescriptorFilterPipe } from './pipes/descriptor-filter/descriptor-filter.pipe';
+import { ShadowScrollDirective } from './directives/shadow-scroll/shadow-scroll.directive';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { DescriptorFilterPipe } from './pipes/descriptor-filter/descriptor-filte
     FeedbackComponent,
     SplashPageComponent,
     PrimerComponent,
-    DescriptorFilterPipe
+    DescriptorFilterPipe,
+    ShadowScrollDirective
   ],
   imports: [
     BrowserModule,

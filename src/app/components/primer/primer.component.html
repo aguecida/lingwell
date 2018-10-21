@@ -39,7 +39,7 @@
         </mat-form-field>
     </div>
   </div>
-  <div class="list-container custom-scroll" appScroll>
+  <div class="list-container custom-scroll" lwlShadowScroll>
       <div *ngFor="let category of categories | descriptorFilter: query : categoryFilter.value" class="category">
         <h1>{{category.Name}}</h1>
         <mat-chip-list>
@@ -75,7 +75,7 @@
         </mat-form-field>
     </div>
   </div>
-  <div class="list-container custom-scroll" appScroll>
+  <div class="list-container custom-scroll" lwlShadowScroll>
       <div *ngFor="let o of occupations | descriptorFilter: occupationQuery : occupationFilter.value" class="category">
         <h1>{{o.Name}}</h1>
         <mat-chip-list>
