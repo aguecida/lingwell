@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { faUserCircle, faGamepad, faComments } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'lwl-splash-page',
@@ -6,6 +7,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./splash-page.component.scss']
 })
 export class SplashPageComponent implements OnInit {
+
+  faUserCircle = faUserCircle;
+  faGamepad = faGamepad;
+  faComments = faComments;
 
   constructor() { }
 
