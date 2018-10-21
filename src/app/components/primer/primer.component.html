@@ -40,7 +40,7 @@
     </div>
   </div>
   <div class="list-container custom-scroll" appScroll>
-      <div *ngFor="let category of categories | filter: query : categoryFilter.value" class="category">
+      <div *ngFor="let category of categories | descriptorFilter: query : categoryFilter.value" class="category">
         <h1>{{category.Name}}</h1>
         <mat-chip-list>
           <mat-basic-chip [ngClass]="{ 'selected': isSelectedInterest(interest) }" (click)="interestSelected(interest)" *ngFor="let interest of category.Interests" disableRipple>
@@ -76,7 +76,7 @@
     </div>
   </div>
   <div class="list-container custom-scroll" appScroll>
-      <div *ngFor="let o of occupations | filter: occupationQuery : occupationFilter.value" class="category">
+      <div *ngFor="let o of occupations | descriptorFilter: occupationQuery : occupationFilter.value" class="category">
         <h1>{{o.Name}}</h1>
         <mat-chip-list>
           <mat-basic-chip [ngClass]="{ 'selected': isSelectedOccupation(interest) }" (click)="occupationSelected(interest)" *ngFor="let interest of o.Interests" disableRipple>
