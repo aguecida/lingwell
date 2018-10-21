@@ -1,0 +1,20 @@
+@import '~@angular/material/theming';
+
+@mixin primer-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+
+  mat-basic-chip {
+      border-color: mat-color($primary);
+      color: mat-color($primary);
+
+      &.selected {
+        color: #fff;
+        background-color: mat-color($primary);
+    }
+  }
+
+  .begin-lessons > button {
+    background-color: mat-color($primary);
+  }
+}
