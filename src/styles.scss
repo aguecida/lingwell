@@ -1,1 +1,77 @@
-/* You can add global styles to this file, and also import other style files */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.spacer {
+    flex: 1 1 auto;
+}
+
+input, textarea, button, select, a {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/*** Custom -webkit scrollbar ***/
+
+$scroll-width-default: 12px;
+$scroll-width-small: 8px;
+
+$scroll-color-default: #ddd;
+$scroll-color-hover: #ccc;
+$scroll-color-active: #bbb;
+
+.custom-scroll::-webkit-scrollbar {
+    width: $scroll-width-default;
+}
+
+.custom-scroll::-webkit-scrollbar-track {
+    border-radius: $scroll-width-default;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb {
+    border-radius: $scroll-width-default;
+    background: $scroll-color-default;
+}
+
+.custom-scroll:hover::-webkit-scrollbar-thumb {
+    background: $scroll-color-hover;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:hover {
+    background: $scroll-color-active;
+}
+
+.custom-scroll::-webkit-scrollbar-thumb:active {
+    background: $scroll-color-active;
+}
+
+.custom-scroll.small::-webkit-scrollbar {
+    width: $scroll-width-small;
+}
+
+.custom-scroll.small::-webkit-scrollbar-track {
+    border-radius: $scroll-width-small;
+}
+
+.custom-scroll.small::-webkit-scrollbar-thumb {
+    border-radius: $scroll-width-small;
+}
+
+/*** Material Overrides ***/
+
+.language-container {
+    .mat-form-field-appearance-fill .mat-form-field-flex {
+        background: #fff !important;
+        border-radius: 4px !important;
+        box-shadow: 0 0 15px 2px #777;
+        transition: box-shadow .2s;
+    
+        &:hover {
+            box-shadow: 0 0 15px 2px #555;
+        }
+    }
+
+    .mat-form-field-appearance-fill .mat-form-field-underline {
+        display: none;
+    }
+}
