@@ -1,0 +1,29 @@
+.language-container {
+    background-image: url("../../../assets/world1.jpg");
+    text-align: center;
+    height: calc(100vh - 57px);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.language-input {
+    width: 90%; 
+    margin-top: calc(100vh / 2 - 57px);
+}
+
+.language-unavailable {
+    margin-left: 5px;
+    font-size: 11px;
+}
+
+.flag {
+    height: 25px;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+
+@media only screen and (min-width: 426px) {
+    .language-input {
+        width: 400px;
+    }
+}

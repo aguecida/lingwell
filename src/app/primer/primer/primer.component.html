@@ -1,0 +1,13 @@
+<router-outlet></router-outlet>
+
+<div class="footer">
+  <div class="footer-content">
+    <!-- <span *ngIf="currentStep !== 4" class="step-text step-number">STEP {{currentStep}}</span> -->
+    <span class="step-text">{{HintText}}</span>
+    <span class="spacer"></span>
+    <!-- <button (click)="stepBack()" mat-button color="primary" [disabled]="stepBackDisabled()">BACK</button>
+    <button (click)="stepNext()" mat-button color="primary" [disabled]="stepNextDisabled()">NEXT</button> -->
+    <button (click)="navBackward()" mat-button color="primary" [disabled]="BackwardNavDisabled">BACK</button>
+    <button (click)="navForward()" mat-button color="primary" [disabled]="ForwardNavDisabled">NEXT</button>
+  </div>
+</div>
