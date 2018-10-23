@@ -12,6 +12,7 @@ import { SplashPageComponent } from './components/splash-page/splash-page.compon
 import { PrimerComponent } from './components/primer/primer.component';
 import { DescriptorFilterPipe } from './pipes/descriptor-filter/descriptor-filter.pipe';
 import { ShadowScrollDirective } from './directives/shadow-scroll/shadow-scroll.directive';
+import { SurveyModule } from './survey/survey.module';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { ShadowScrollDirective } from './directives/shadow-scroll/shadow-scroll.
     ReactiveFormsModule,
     MaterialModule,
     RouteModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    SurveyModule
   ],
   entryComponents: [
     FeedbackComponent
