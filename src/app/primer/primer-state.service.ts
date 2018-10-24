@@ -1,11 +1,15 @@
 import { Injectable } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
+import { FormControl } from '@angular/forms';
+import { Language } from '../models/language';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PrimerStateService {
+
+  selectedLanguage: Language;
 
   backwardNavDisabled: boolean = false;
   forwardNavDisabled: boolean = true;
