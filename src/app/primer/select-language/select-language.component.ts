@@ -4,6 +4,7 @@ import { FormControl } from '@angular/forms';
 import { Language } from 'src/app/models/language';
 import { PrimerStateService } from '../primer-state.service';
 import { MatSelectChange } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'lwl-select-language',
@@ -22,9 +23,11 @@ export class SelectLanguageComponent implements OnInit {
     { Id: 3, Name: 'Italian', Icon: 'italy', Available: true }
   ];
 
-  constructor(private primerStateService: PrimerStateService) { }
+  constructor(private primerStateService: PrimerStateService, private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle(`Lingwell - ${this.stepText}`);
+
     if (this.primerStateService.selectedLanguage) {
       let lastSelectedLanguageId = this.primerStateService.selectedLanguage.Id;
       let lastSelectedLanguage = this.languages.find(language => language.Id === lastSelectedLanguageId);

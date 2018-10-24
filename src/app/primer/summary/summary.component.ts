@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'lwl-summary',
@@ -9,9 +10,10 @@ export class SummaryComponent implements OnInit {
 
   stepText: string = 'Done';
 
-  constructor() { }
+  constructor(private titleService: Title) { }
 
   ngOnInit() {
+    this.titleService.setTitle(`Lingwell - ${this.stepText}`);
   }
 
 }
