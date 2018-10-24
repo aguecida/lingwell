@@ -15,6 +15,7 @@ export class StepNavigatorComponent implements OnInit {
   @Input() disableBackwardNav: boolean = false;
   @Input() disableForwardNav: boolean = false;
   @Input() useDefaultBackBehaviour: boolean = true;
+  @Input() position: string = 'bottom';
 
   @Output() navigateBackward: EventEmitter<any> = new EventEmitter();
   @Output() navigateForward: EventEmitter<any> = new EventEmitter();

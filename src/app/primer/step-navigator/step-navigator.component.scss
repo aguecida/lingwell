@@ -1,11 +1,19 @@
 .step-nav {
     background-color: #fafafa;
-    border-top: 1px solid #eee;
-    bottom: 0;
     left: 0;
     padding: 10px 0;
     position: fixed;
     width: 100%;
+
+    &.bottom {
+        bottom: 0;
+        border-top: 1px solid #eee;
+    }
+
+    &.top {
+        top: 0;
+        border-bottom: 1px solid #eee;
+    }
 
     .step-nav-content {
         display: flex;
