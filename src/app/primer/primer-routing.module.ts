@@ -10,7 +10,7 @@ const routes: Routes = [
     component: PrimerComponent,
     children: [
       {
-        path: 'select-language',
+        path: '',
         component: SelectLanguageComponent
       },
       {

@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SummaryComponent implements OnInit {
 
+  stepText: string = 'Done';
+
   constructor() { }
 
   ngOnInit() {

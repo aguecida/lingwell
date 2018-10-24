@@ -57,6 +57,21 @@ $scroll-color-active: #bbb;
     border-radius: $scroll-width-small;
 }
 
+/*** Animations ***/
+
+.fadeIn {
+    animation: fadeIn .3s ease-in 0s;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
 /*** Material Overrides ***/
 
 .language-container {

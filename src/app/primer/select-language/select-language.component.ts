@@ -11,23 +11,28 @@ import { PrimerStateService } from '../primer-state.service';
 })
 export class SelectLanguageComponent implements OnInit {
 
-  languages: Language[] = [];
+  stepTitle: string = 'STEP 1';
+  stepText: string = 'Select a language to learn';
+
+  languages: Language[] = [
+    { Id: 1, Name: 'Spanish', Icon: 'spain', Available: true },
+    { Id: 2, Name: 'German', Icon: 'germany', Available: true },
+    { Id: 3, Name: 'Italian', Icon: 'italy', Available: true }
+  ];
+
   selectedLanguage = new FormControl();
 
   constructor(private primerStateService: PrimerStateService) { }
 
   ngOnInit() {
-    this.primerStateService.HintText = 'Select a language to learn';
-    
-    this.languages = [
-      { Id: 1, Name: 'Spanish', Icon: 'spain', Available: true },
-      { Id: 2, Name: 'German', Icon: 'germany', Available: true },
-      { Id: 3, Name: 'Italian', Icon: 'italy', Available: true }
-    ];
   }
 
   languageSelected() {
     this.primerStateService.enableForwardNav();
+  }
+
+  navigateForward() {
+    this.primerStateService.navForward();
   }
 
 }
