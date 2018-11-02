@@ -6,10 +6,10 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
-import { FeedbackComponent } from './components/feedback/feedback.component';
+import { FeedbackComponent } from './feedback/feedback.component';
 import { RouteModule } from './app-routing.module';
-import { SplashPageComponent } from './components/splash-page/splash-page.component';
-import { PrimerComponent } from './components/primer/primer.component';
+import { SplashPageComponent } from './splash-page/splash-page.component';
+import { PrimerComponent } from './primer/primer.component';
 import { DescriptorFilterPipe } from './pipes/descriptor-filter/descriptor-filter.pipe';
 import { ShadowScrollDirective } from './directives/shadow-scroll/shadow-scroll.directive';
 import { NotFoundComponent } from './not-found/not-found.component';

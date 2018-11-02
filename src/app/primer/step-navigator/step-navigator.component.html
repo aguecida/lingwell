@@ -1,9 +1,0 @@
-<div [ngClass]="position" class="step-nav">
-  <div class="step-nav-content">
-    <span class="step-text step-title">{{stepTitle}}</span>
-    <span class="step-text">{{stepText}}</span>
-    <span class="spacer"></span>
-    <button (click)="navBackward()" mat-button color="primary" [disabled]="disableBackwardNav" disableRipple>{{backText}}</button>
-    <button (click)="navForward()" mat-button color="primary" [disabled]="disableForwardNav" disableRipple>{{forwardText}}</button>
-  </div>
-</div>

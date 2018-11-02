@@ -2,9 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { MatDialog } from '@angular/material';
 
-import { Category } from "../../models/category";
-import { Interest } from '../../models/interest';
-import { Language } from '../../models/language';
+import { Category } from "../models/category";
+import { Interest } from '../models/interest';
+import { Language } from '../models/language';
 import { FeedbackComponent } from '../feedback/feedback.component';
 
 @Component({
