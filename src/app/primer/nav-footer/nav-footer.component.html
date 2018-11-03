@@ -1,0 +1,7 @@
+<div class="footer-content">
+  <span *ngIf="showStepNumber" class="step-text step-number">{{stepNumberText}}</span>
+  <span class="step-text">{{stepText}}</span>
+  <span class="spacer"></span>
+  <button (click)="navigateBack()" mat-button color="primary" [disabled]="stepBackDisabled">BACK</button>
+  <button (click)="navigateNext()" mat-button color="primary" [disabled]="stepNextDisabled">NEXT</button>
+</div>

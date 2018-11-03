@@ -1,0 +1,39 @@
+:host {
+    background-color: #fafafa;
+    border-top: 1px solid #eee;
+    bottom: 0;
+    left: 0;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+}
+
+.footer-content {
+    display: flex;
+    margin: 0 20px;
+}
+
+.step-text {
+    color: #555;
+    margin-top: 8px;
+}
+
+.step-number {
+    display: none;
+    margin-right: 10px;
+    font-weight: 500;
+}
+
+button {
+    margin-left: 8px;
+}
+
+@media only screen and (min-width: 426px) {
+    .footer-content {
+        margin: 0 30px;
+    }
+
+    .step-number {
+        display: inline !important;
+    }
+}
