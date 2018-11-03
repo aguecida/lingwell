@@ -33,8 +33,8 @@ export class PrimerComponent implements OnInit {
   ngOnInit() {
     this.languages = [
       { Id: 1, Name: 'Spanish', Icon: 'spain', Available: true },
-      { Id: 2, Name: 'German', Icon: 'germany', Available: true },
-      { Id: 3, Name: 'Italian', Icon: 'italy', Available: true }
+      { Id: 2, Name: 'German', Icon: 'germany', Available: false },
+      { Id: 3, Name: 'Italian', Icon: 'italy', Available: false }
     ];
 
     this.categories = [
@@ -199,13 +199,13 @@ export class PrimerComponent implements OnInit {
 
   getHintText(): string {
     if (this.currentStep === 1) {
-      return 'Select a language to learn';
+      return 'Select a language';
     }
     else if (this.currentStep === 2) {
-      return 'Select a few of your interests';
+      return 'Select interests';
     }
     else if (this.currentStep === 3) {
-      return 'Select your occupation(s)';
+      return 'Select occupation(s)';
     }
     else {
       return 'Done';
