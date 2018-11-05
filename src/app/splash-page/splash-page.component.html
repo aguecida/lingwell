@@ -1,33 +1,16 @@
-<div style="background: #4CAF50; padding-top: 80px; text-align: center; color: #fff;">
-  <h1 class="mat-display-2" style="margin: 20px 0;">Lingwell</h1>
-  <h1 style="margin: 20px 0;">Language learning, personalized.</h1>
-  <button mat-raised-button style="margin: 60px 0;" routerLink="/getting-started">Get Started</button>
+<div style="height: 100vh;background: radial-gradient(circle at top right, #4CAF50 -10%, #66BB6A 50%); text-align: center; color: #fff;">
+  <h1 class="mat-display-2">Lingwell</h1>
+  <h1 class="headline">
+    <div class="subject">Language learning,</div>
+    <div style="display: inline-block; position: relative;">
+        <div class="adjective one" style="position: absolute;">made easy.</div>
+        <div class="adjective two" style="position: absolute;">made fun.</div>
+        <div class="adjective three">personalized.</div>
+    </div>
+    
+  </h1>
+  <button style="margin: 60px 0;" routerLink="/getting-started">
+    <span>Start Learning</span>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </button>
 </div>
-
-<div style="text-align: center;">
-  <h1>How it works</h1>
-  <mat-grid-list cols="3" gutterSize="20" style="margin: 0 40px;">
-    <mat-grid-tile style="border: 1px solid #ddd;">
-      <div>
-        <fa-icon [icon]="faUserCircle" size="3x"></fa-icon>
-        <h1 style="margin: 0 0 0 15px;">Tell us about yourself</h1>
-      </div>
-    </mat-grid-tile>
-    <mat-grid-tile style="border: 1px solid #ddd;">
-      <div>
-        <fa-icon [icon]="faComments" size="3x"></fa-icon>
-        <h1 style="margin: 0 0 0 15px;">Learn with others</h1>
-      </div>
-      
-    </mat-grid-tile>
-    <mat-grid-tile style="border: 1px solid #ddd;">
-      <div>
-        <fa-icon [icon]="faGamepad" size="3x"></fa-icon>
-        <h1 style="margin: 0 0 0 15px;">Have fun while you learn</h1>
-      </div>
-      
-    </mat-grid-tile>
-  </mat-grid-list>
-</div>
-
-

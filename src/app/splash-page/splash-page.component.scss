@@ -1,0 +1,113 @@
+@import '~@angular/material/theming';
+
+$config: mat-typography-config();
+
+button {
+    @include mat-typography-level-to-styles($config, button);
+    margin: 60px 0;
+    background-color: transparent;
+    box-shadow: none;
+    padding: 20px 30px;
+    font-size: 1.3em;
+    border-radius: 35px;
+    color: white;
+    border: 2px solid #fff;
+    cursor: pointer;
+    transition: background-color .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
+    outline: none;
+
+    &:hover {
+        background-color: #fff;
+        border: 2px solid transparent;
+        color: #66ba6a;
+    }
+
+    mat-icon {
+        animation: slide1 1s ease-in-out infinite;
+        vertical-align: middle;
+    }
+}
+
+h1 > div {
+    display: inline-block;
+}
+
+@keyframes slide1 {
+    0%, 100% {
+      transform: translate(0, 0);
+    }
+  
+    50% {
+      transform: translate(10px, 0);
+    }
+  }
+
+  .headline {
+      letter-spacing: 2px;
+      text-align: center;
+  }
+
+  .subject {
+      margin-right: 10px;
+  }
+  
+.adjective {
+    opacity: 0;
+
+    &.one {
+        animation: rolodex 2s ease 1s forwards;
+    }
+
+    &.two {
+        animation: rolodex 2s ease 2.8s forwards;
+    }
+
+    &.three {
+        animation: rolodex-final 2s ease 4.6s forwards;
+    }
+}
+
+  @keyframes rolodex {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+  }
+
+  @keyframes rolodex-final {
+    0% {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    25% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+  }
+  
