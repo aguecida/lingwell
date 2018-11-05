@@ -2,8 +2,16 @@
 
 $config: mat-typography-config();
 
+.splash-container {
+    position: fixed;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    left: 50%;
+}
+
 button {
     @include mat-typography-level-to-styles($config, button);
+    animation: showUp 1s ease 0s 1 forwards;
     margin: 60px 0;
     background-color: transparent;
     box-shadow: none;
@@ -42,7 +50,14 @@ h1 > div {
     }
   }
 
+  .title {
+      animation: showUp 1s ease 0s 1 forwards;
+      letter-spacing: 3px;
+      margin-bottom: 20px;
+  }
+
   .headline {
+    animation: showUp 1s ease 0s 1 forwards;
       letter-spacing: 2px;
       text-align: center;
   }
@@ -55,15 +70,28 @@ h1 > div {
     opacity: 0;
 
     &.one {
-        animation: rolodex 2s ease 1s forwards;
+        animation: rolodex-first 2s ease 0s forwards;
+        opacity: 1;
     }
 
     &.two {
-        animation: rolodex 2s ease 2.8s forwards;
+        animation: rolodex 2s ease 1.8s forwards;
     }
 
     &.three {
-        animation: rolodex-final 2s ease 4.6s forwards;
+        animation: rolodex-final 2s ease 3.6s forwards;
+    }
+}
+
+@keyframes showUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0px);
     }
 }
 
@@ -76,6 +104,24 @@ h1 > div {
     25% {
         opacity: 1;
         transform: translateY(0px);
+    }
+
+    75% {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    
+    100% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+  }
+
+  @keyframes rolodex-first {
+    0% {
+    }
+
+    25% {
     }
 
     75% {
