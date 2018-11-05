@@ -27,6 +27,7 @@ $config: mat-typography-config();
 .headline {
     animation: show-up 1s ease 0s 1 forwards;
     letter-spacing: 2px;
+    margin-bottom: 80px;
     text-align: center;
 
     .subject, .adjectives {
@@ -59,7 +60,7 @@ $config: mat-typography-config();
     }
 }
 
-button {
+a {
     @include mat-typography-level-to-styles($config, button);
     animation: show-up 1s ease 0s 1 forwards;
     background-color: transparent;
@@ -68,10 +69,11 @@ button {
     box-shadow: none;
     color: white;
     cursor: pointer;
+    display: inline-block;
     font-size: 1.3em;
-    margin-top: 60px;
     outline: none;
     padding: 20px 30px;
+    text-decoration: none;
     transition: background-color .3s ease-in-out, color .3s ease-in-out, border .3s ease-in-out;
     
     &:hover {
