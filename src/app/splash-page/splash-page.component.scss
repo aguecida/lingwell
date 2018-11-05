@@ -19,15 +19,17 @@ $config: mat-typography-config();
 }
 
 .title {
-    animation: show-up 1s ease 0s 1 forwards;
+    animation: show-up 1s ease 0.5s 1 forwards;
     letter-spacing: 3px;
     margin-bottom: 20px;
+    opacity: 0;
 }
 
 .headline {
-    animation: show-up 1s ease 0s 1 forwards;
+    animation: show-up 1s ease 0.5s 1 forwards;
     letter-spacing: 2px;
     margin-bottom: 80px;
+    opacity: 0;
     text-align: center;
 
     .subject, .adjectives {
@@ -41,16 +43,16 @@ $config: mat-typography-config();
             opacity: 0;
         
             &.one {
-                animation: rolodex-first 2s ease 0s forwards;
+                animation: rolodex-first 2s ease 0.5s forwards;
                 opacity: 1;
             }
         
             &.two {
-                animation: rolodex 2s ease 1.8s forwards;
+                animation: rolodex 2s ease 2.3s forwards;
             }
         
             &.three {
-                animation: rolodex-final 2s ease 3.6s forwards;
+                animation: rolodex-final 2s ease 4.1s forwards;
             }
         }
     }
@@ -62,7 +64,7 @@ $config: mat-typography-config();
 
 a {
     @include mat-typography-level-to-styles($config, button);
-    animation: show-up 1s ease 0s 1 forwards;
+    animation: show-up 1s ease 0.5s 1 forwards;
     background-color: transparent;
     border: 2px solid #fff;
     border-radius: 35px;
@@ -72,6 +74,7 @@ a {
     display: inline-block;
     font-size: 1.3em;
     letter-spacing: 1px;
+    opacity: 0;
     outline: none;
     padding: 20px 30px;
     text-decoration: none;
