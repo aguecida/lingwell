@@ -108,14 +108,4 @@
   (stepNext)="stepNext()">
 </lwl-nav-footer>
 
-<!-- <div class="footer">
-  <div class="footer-content">
-    <span *ngIf="currentStep !== 4" class="step-text step-number">STEP {{currentStep}}</span>
-    <span class="step-text">{{getHintText()}}</span>
-    <span class="spacer"></span>
-    <button (click)="stepBack()" mat-button color="primary" [disabled]="stepBackDisabled()">BACK</button>
-    <button (click)="stepNext()" mat-button color="primary" [disabled]="stepNextDisabled()">NEXT</button>
-  </div>
-</div> -->
-
 <mat-icon *ngIf="currentStep === 2 || currentStep === 3" class="feedback fadeIn" (click)="openFeedbackDialog()" matTooltip="Feedback" matTooltipPosition="right">feedback</mat-icon>
