@@ -2,7 +2,6 @@ import { BrowserModule, Title } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 import { AppComponent } from './app.component';
 import { MaterialModule } from './material.module';
@@ -32,8 +31,7 @@ import { NavFooterComponent } from './primer/nav-footer/nav-footer.component';
     FormsModule,
     ReactiveFormsModule,
     MaterialModule,
-    RouteModule,
-    FontAwesomeModule
+    RouteModule
   ],
   entryComponents: [
     FeedbackComponent
