@@ -1,5 +1,6 @@
 @import '~@angular/material/theming';
 
+@import 'app/splash-page/splash-page-theme.component';
 @import 'app/primer/primer-theme.component';
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -23,4 +24,5 @@ $app-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
 // Alternatively, you can import and @include the theme mixins for each component
 // that you are using.
 @include angular-material-theme($app-theme);
+@include splash-page-theme($app-theme);
 @include primer-theme($app-theme);
