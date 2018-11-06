@@ -6,6 +6,7 @@ import { Category } from "../models/category";
 import { Interest } from '../models/interest';
 import { Language } from '../models/language';
 import { FeedbackComponent } from '../feedback/feedback.component';
+import { Title } from '@angular/platform-browser';
 
 @Component({
   selector: 'lwl-primer',
@@ -28,9 +29,11 @@ export class PrimerComponent implements OnInit {
   occupations: Category[] = [];
   selectedOccupations: Interest[] = [];
 
-  constructor(public dialog: MatDialog) { }
+  constructor(private titleService: Title, public dialog: MatDialog) { }
 
   ngOnInit() {
+    this.titleService.setTitle('Getting started - Lingwell');
+
     this.languages = [
       { Id: 1, Name: 'Spanish', Icon: 'spain', Available: true },
       { Id: 2, Name: 'German', Icon: 'germany', Available: false },
