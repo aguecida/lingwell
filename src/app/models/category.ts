@@ -1,7 +1,7 @@
-import { Interest } from "./interest";
+import { Descriptor } from "./descriptor";
 
 export class Category {
     Id: number;
     Name: string;
-    Interests: Interest[];
+    Descriptors: Descriptor[];
 }

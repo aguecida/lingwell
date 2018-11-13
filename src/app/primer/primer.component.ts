@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from "@angular/forms";
 import { MatDialog } from '@angular/material';
+import { Title } from '@angular/platform-browser';
 
 import { Category } from "../models/category";
-import { Interest } from '../models/interest';
+import { Descriptor } from '../models/descriptor';
 import { Language } from '../models/language';
 import { FeedbackComponent } from '../feedback/feedback.component';
-import { Title } from '@angular/platform-browser';
 import { LanguageService } from '../services/language.service';
 import { DescriptorService } from '../services/descriptor.service';
 
@@ -17,49 +17,21 @@ import { DescriptorService } from '../services/descriptor.service';
 })
 export class PrimerComponent implements OnInit {
 
+  currentStep: number = 1;
   languages: Language[] = [];
   selectedLanguage = new FormControl();
-
-  currentStep: number = 1;
-
-  categoryFilter = new FormControl();
-  categories: Category[] = [];
-  selectedInterests: Interest[] = [];
-
-  occupationFilter = new FormControl();
+  interests: Category[] = [];
+  selectedInterests: Descriptor[] = [];
   occupations: Category[] = [];
-  selectedOccupations: Interest[] = [];
+  selectedOccupations: Descriptor[] = [];
 
   constructor(private languageService: LanguageService, private descriptorService: DescriptorService, private titleService: Title, public dialog: MatDialog) { }
 
   ngOnInit() {
     this.titleService.setTitle('Getting started - Lingwell');
-
     this.languages = this.languageService.getLanguages();
-    this.categories = this.descriptorService.getInterests();
+    this.interests = this.descriptorService.getInterests();
     this.occupations = this.descriptorService.getOccupations();
-  }
-
-  interestSelected(interest: Interest): void {
-    let index = this.selectedInterests.findIndex(selectedInterest => selectedInterest.Id === interest.Id);
-
-    if (index !== -1) this.selectedInterests.splice(index, 1);
-    else this.selectedInterests.push(interest);
-  }
-
-  occupationSelected(interest: Interest): void {
-    let index = this.selectedOccupations.findIndex(selectedOccupation => selectedOccupation.Id === interest.Id);
-
-    if (index !== -1) this.selectedOccupations.splice(index, 1);
-    else this.selectedOccupations.push(interest);
-  }
-
-  isSelectedInterest(interest: Interest): boolean {
-    return this.selectedInterests.some(selectedInterest => selectedInterest.Id === interest.Id);
-  }
-
-  isSelectedOccupation(interest: Interest): boolean {
-    return this.selectedOccupations.some(selectedOccupation => selectedOccupation.Id === interest.Id);
   }
 
   stepNext(): void {

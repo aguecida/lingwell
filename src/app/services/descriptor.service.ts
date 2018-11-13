@@ -13,7 +13,7 @@ export class DescriptorService {
       {
         Id: 1,
         Name: 'Sports',
-        Interests: [
+        Descriptors: [
           { Id: 1, Name: 'Rock Climbing' },
           { Id: 2, Name: 'Swimming' },
           { Id: 3, Name: 'Surfing' },
@@ -36,7 +36,7 @@ export class DescriptorService {
       {
         Id: 2,
         Name: 'Art + Music',
-        Interests: [
+        Descriptors: [
           { Id: 18, Name: 'Guitar' },
           { Id: 19, Name: 'Painting' },
           { Id: 20, Name: 'Singing' }
@@ -45,7 +45,7 @@ export class DescriptorService {
       {
         Id: 3,
         Name: 'Entertainment',
-        Interests: [
+        Descriptors: [
           { Id: 21, Name: 'Television' },
           { Id: 22, Name: 'Movies' },
           { Id: 23, Name: 'Theatre' },
@@ -54,7 +54,7 @@ export class DescriptorService {
       {
         Id: 4,
         Name: 'Technology',
-        Interests: [
+        Descriptors: [
           { Id: 24, Name: 'Computer Hardware' },
           { Id: 25, Name: 'Coding/Programming' },
           { Id: 26, Name: 'eSports' }
@@ -63,7 +63,7 @@ export class DescriptorService {
       {
         Id: 5,
         Name: 'Food + Drink',
-        Interests: [
+        Descriptors: [
           { Id: 27, Name: 'Cooking' },
           { Id: 28, Name: 'Baking' },
           { Id: 29, Name: 'Wine Tasting' },
@@ -73,7 +73,7 @@ export class DescriptorService {
       {
         Id: 6,
         Name: 'Nature + Wildlife',
-        Interests: [
+        Descriptors: [
           { Id: 31, Name: 'Astronomy' },
           { Id: 32, Name: 'Hiking' },
           { Id: 33, Name: 'Traveling' },
@@ -88,7 +88,7 @@ export class DescriptorService {
       {
         Id: 7,
         Name: 'Technology',
-        Interests: [
+        Descriptors: [
           { Id: 500, Name: 'Software Developer' },
           { Id: 501, Name: 'Quality Assurance Analyst' }
         ]
@@ -96,7 +96,7 @@ export class DescriptorService {
       {
         Id: 8,
         Name: 'Education',
-        Interests: [
+        Descriptors: [
           { Id: 502, Name: 'Student' },
           { Id: 503, Name: 'Teacher' }
         ]
@@ -104,7 +104,7 @@ export class DescriptorService {
       {
         Id: 9,
         Name: 'Health + Fitness',
-        Interests: [
+        Descriptors: [
           { Id: 504, Name: 'Doctor' },
           { Id: 505, Name: 'Nurse' },
           { Id: 506, Name: 'Personal Trainer' },

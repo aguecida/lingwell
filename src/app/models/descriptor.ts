@@ -1,4 +1,4 @@
-export class Interest {
+export class Descriptor {
     Id: number;
     Name: string;
 }

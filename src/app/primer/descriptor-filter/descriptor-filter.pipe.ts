@@ -12,7 +12,7 @@ export class DescriptorFilterPipe implements PipeTransform {
     if (!query && (!categories || categories.length === 0)) return data;
 
     // Deep copy categories
-    let clonedCategories = JSON.parse(JSON.stringify(data));
+    let clonedCategories: Category[] = JSON.parse(JSON.stringify(data));
 
     if (categories && categories.length > 0) {
       clonedCategories = clonedCategories.filter(category => categories.includes(category.Name));
@@ -20,8 +20,8 @@ export class DescriptorFilterPipe implements PipeTransform {
 
     if (query) {
       clonedCategories = clonedCategories.filter(category => {
-        category.Interests = category.Interests.filter(interest => interest.Name.toLowerCase().includes(query.toLowerCase()));
-        return category.Interests.length > 0;
+        category.Descriptors = category.Descriptors.filter(descriptor => descriptor.Name.toLowerCase().includes(query.toLowerCase()));
+        return category.Descriptors.length > 0;
       });
     }
 

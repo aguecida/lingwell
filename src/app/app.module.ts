@@ -13,6 +13,7 @@ import { DescriptorFilterPipe } from './primer/descriptor-filter/descriptor-filt
 import { ShadowScrollDirective } from './directives/shadow-scroll/shadow-scroll.directive';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { NavFooterComponent } from './primer/nav-footer/nav-footer.component';
+import { DescriptorViewComponent } from './primer/descriptor-view/descriptor-view.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { NavFooterComponent } from './primer/nav-footer/nav-footer.component';
     DescriptorFilterPipe,
     ShadowScrollDirective,
     NotFoundComponent,
-    NavFooterComponent
+    NavFooterComponent,
+    DescriptorViewComponent
   ],
   imports: [
     BrowserModule,
